@@ -1,3 +1,10 @@
+<%
+    session = request.getSession(false); // Do not create a new session if it doesn't exist
+
+    if (session == null || session.getAttribute("UN") == null) {
+        response.sendRedirect("signin.jsp");
+    }
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">

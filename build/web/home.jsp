@@ -10,18 +10,12 @@
 <%@page import="Models.DatabaseConnection"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% session = request.getSession(false);
+<%
+    session = request.getSession(false); // Do not create a new session if it doesn't exist
 
-    if (session == null) {
-        session.invalidate();
+    if (session == null || session.getAttribute("UN") == null) {
         response.sendRedirect("signin.jsp");
-        return;
     }
-
-//                if (session == null || session.isNew()) {
-//                    response.sendRedirect("signin.jsp");
-//                }
-
 %>
 <!DOCTYPE html>
 <html lang="en">

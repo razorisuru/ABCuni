@@ -27,6 +27,8 @@ public class LogOutController extends HttpServlet {
         if (session.getAttribute("UN") != null) {
             session.invalidate();
             response.sendRedirect("signin.jsp");
+        }else {
+            response.sendRedirect("signin.jsp");
         }
 
 
